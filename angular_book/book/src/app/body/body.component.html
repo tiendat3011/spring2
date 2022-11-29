@@ -1,0 +1,135 @@
+<main id="main"style="margin-top: 70px">
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="row">
+        <div id="carouselExampleInterval" class="carousel slide carousel-fade container col-md-8" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+              <img style="border-radius: 15px ; height: 300px ; width: 100px"  src="https://cdn0.fahasa.com/media/magentothem/banner7/VPP_Main_banner_T10_840x320.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="1000">
+              <img style="border-radius: 15px; height: 300px ; width: 100px" src="https://cdn0.fahasa.com/media/magentothem/banner7/dongamamxanh_resize_840x320.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="">
+              <img style="border-radius: 15px; height: 300px ; width: 100px" src="https://cdn0.fahasa.com/media/magentothem/banner7/Megasale_Main_Banner_Slide_840x320.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                  data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                  data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div class="col-md-4">
+          <a href="#">
+            <div class="card text-white" style="border-radius: 20px; height: 300px">
+              <img style="border-radius: 20px; height: 300px " src="https://cdn0.fahasa.com/media/wysiwyg/Thang-09-2022/MocaT1022_310x210png.png" class="card-img" alt="...">
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="why-us" class="why-us">
+    <div class="container" data-aos="fade-up">
+      <h2 style="color: #5fcf80;font-family: Courier new"><label><strong>GIẢM GIÁ</strong></label></h2>
+      <div class="row">
+        <div class="content col-lg-4" >
+          <div>
+            <a href="#">
+              <div class="card text-white" style="border-radius: 20px ; height: 100%">
+                <img style="border-radius: 20px; height: 350px " src="https://images.pexels.com/photos/2877338/pexels-photo-2877338.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img" alt="...">
+              </div>
+            </a>
+          </div>
+          <div style="margin-top: 50px">
+            <a href="#">
+              <div class="card text-white" style="border-radius: 20px ; height: 100%">
+                <img style="border-radius: 20px; height: 350px " src="https://images.pexels.com/photos/3032049/pexels-photo-3032049.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img" alt="...">
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" >
+          <div class="icon-boxes d-flex flex-column justify-content-center">
+            <div class="row">
+              <div  class="col-md-4 col-sm-6" *ngFor="let list1 of listBooks1">
+                <div class="product-grid" >
+                  <div class="product-image" >
+                    <a [routerLink]="['/detail', list1.id]" class="image">
+                      <img class="pic-1" style="height: 250px" src="{{list1.image}}">
+                    </a>
+                    <span style="background-color: #5fcf80" class="product-sale-label">{{list1.discount.percent}}%</span>
+                    <ul class="social">
+                      <li><a [routerLink]="['/detail', list1.id]" data-tip="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                      </svg></a></li>
+                      <li><a (click)="addToCart(list1)" href="#" data-tip="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-dash" viewBox="0 0 16 16">
+                        <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4z"/>
+                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                      </svg></a></li>
+                    </ul>
+                  </div>
+                  <div style="background-color: #f1f1f1; height: 100px" class="product-content">
+                    <div style="height: 80%;"> <h5 style="color: #5fcf80"  ><a href="#" style="font-family: Courier New; font-size: medium">{{list1.name}}</a></h5></div>
+
+                    <div class="badge rounded-pill text-bg-danger" style="color: #ed3c0d; font-family: Cambria;  font-size: 15px">{{list1.price | currency : 'VND'}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="popular-courses" class="courses" >
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <p style="color: #5fcf80;font-family: Courier new">SÁCH MỚI</p>
+      </div>
+      <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-lg-12 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-boxes d-flex flex-column justify-content-center">
+            <div class="row" >
+              <div  class="col-md-3 col-sm-6" *ngFor="let list2 of listBooks2">
+                <div class="product-grid" >
+                  <div class="product-image">
+                    <a [routerLink]="['/detail', list2.id]" class="image">
+                      <img class="pic-1" style="height: 250px" src="{{list2.image}}">
+                    </a>
+                    <span style="background-color: #5fcf80" class="product-sale-label">{{list2.discount.percent}}%</span>
+                    <ul class="social">
+                      <li><a [routerLink]="['/detail', list2.id]" href="#" data-tip="Quick View"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                      </svg></a></li>
+                      <li><a (click)="addToCart(list2)" href="#" data-tip="Add to wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-dash" viewBox="0 0 16 16">
+                        <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4z"/>
+                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                      </svg></a></li>
+                    </ul>
+                  </div>
+                  <div style="background-color: #f1f1f1; height: 100px" class="product-content">
+                    <div style="height: 80%"><h5 style="color: #5fcf80"  ><a  style="font-family: Courier New;font-size: medium" >{{list2.name}}</a></h5></div>
+                    <div class="badge rounded-pill text-bg-danger" style="color: red ; font-family: Cambria; font-size: 15px">{{list2.price |currency: 'VND'}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main><!-- End #main -->
+
